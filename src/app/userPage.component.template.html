@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User page</title>
+</head>
+<body>
+<h1>{{activeUser.username}}s <span *ngIf="activeUser.isAdmin">(Admin)</span> Page</h1>
+<p>First Name : {{activeUser.firstName}}</p>
+<p>Last Name : {{activeUser.lastName}}</p>
+<p>Age : {{activeUser.age}}</p>
+<p>Gender : {{activeUser.gender}}</p>
+<button type="button" (click)="editProfile()"> Edit Profile</button>
+</body>
+</html>

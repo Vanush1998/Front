@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign in Page</title>
+</head>
+<body>
+<div>
+  <h1>Sign in</h1>
+  <form (ngSubmit)="onSignIn()" #signInForm="ngForm">
+    <label> Username
+      <input type="text" name="username" [(ngModel)]="inputUsername" required>
+    </label>
+    <label> Password
+      <input type="password" name="password" [(ngModel)]="inputPassword" required>
+    </label>
+    <button [disabled]="!signInForm.valid" type="submit" name="signInButton">Sign in</button>
+    <button type="button" name="signUpButton" (click)="onSignUp()">Sign up</button>
+  </form>
+</div>
+</body>
+</html>

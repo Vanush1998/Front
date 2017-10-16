@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign up Page</title>
+</head>
+<body>
+<div>
+  <h1>Sign up</h1>
+  <form #signUpForm="ngForm" (ngSubmit)="onSignUp()">
+    <label> Username
+      <input type="text" name="username" [(ngModel)]="inputUsername">
+    </label>
+    <label> First Name
+      <input type="text" name="firstName" [(ngModel)]="inputFirstName">
+    </label>
+    <label> Last Name
+      <input type="text" name="lastName" [(ngModel)]="inputLastName">
+    </label>
+    <label> Age
+      <input type="text" name="age" [(ngModel)]="inputAge">
+    </label>
+    <label> Gender<br>
+      <label>
+        <input type="radio" name="gender" value="Male" [(ngModel)]="inputGender">Male<br>
+      </label>
+      <label>
+        <input type="radio" name="gender" value="Female" [(ngModel)]="inputGender">Female
+      </label>
+    </label>
+    <label> Password
+      <input type="password" name="password"
+             [(ngModel)]="inputPassword">
+    </label>
+    <label> Confirm the password
+      <input type="password" name="confirmPassword"
+             [(ngModel)]="inputPassword">
+    </label>
+    <button type="submit" name="signUpButton">Sign up</button>
+  </form>
+</div>
+</body>
+</html>
