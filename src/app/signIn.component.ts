@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {HashService} from './hashService.service';
-import {Http, RequestOptions} from '@angular/http';
+import {Http, RequestOptions, RequestOptionsArgs} from '@angular/http';
 import {URLSearchParams} from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 import {ActiveUserService} from './activeUser.service';
@@ -27,7 +27,9 @@ export class SignInComponent implements OnInit {
     const router = this.router;
     const params = new URLSearchParams();
     params.append('type', 'signIn');
-    const options = new RequestOptions(params);
+    const options = new RequestOptions({
+      search: params
+    });
     this.http.post('http://localhost:8080/MyServlet', JSON.stringify({
       username: this.inputUsername,
       password: this.hash.hash(this.inputPassword)
