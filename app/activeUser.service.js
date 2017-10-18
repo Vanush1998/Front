@@ -1,5 +1,6 @@
 "use strict";
-var ActiveUserService = (function () {
+exports.__esModule = true;
+var ActiveUserService = /** @class */ (function () {
     function ActiveUserService() {
     }
     ActiveUserService.prototype.set = function (user) {
@@ -11,4 +12,3 @@ var ActiveUserService = (function () {
     return ActiveUserService;
 }());
 exports.ActiveUserService = ActiveUserService;
-//# sourceMappingURL=activeUser.service.js.map

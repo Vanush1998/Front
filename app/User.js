@@ -1,5 +1,6 @@
 "use strict";
-var User = (function () {
+exports.__esModule = true;
+var User = /** @class */ (function () {
     function User(_username, _password, _firstName, _lastName, _age, _gender, _isAdmin) {
         this._username = _username;
         this._password = _password;
@@ -82,4 +83,3 @@ var User = (function () {
     return User;
 }());
 exports.User = User;
-//# sourceMappingURL=User.js.map

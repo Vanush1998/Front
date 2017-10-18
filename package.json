@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "license": "",
   "scripts": {
-    "start": "tsc && concurrently \"npm run tsc:w\" \"node server.js\" ",
+    "start": "tsc && concurrently \"npm run tsc:w\" \"lite-server\"",
     "build": "tsc",
     "lite": "lite-server",
     "tsc": "tsc",

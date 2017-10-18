@@ -1,0 +1,13 @@
+{
+  "server": {
+    "baseDir": "./",
+    "files": [ "./app/*.{html,htm,css,js}" ],
+    "routes": {
+      "/node_modules": "node_modules"
+    }
+  },
+  "serveStatic": [{
+    "route": "./",
+    "dir": "app"
+  }]
+}

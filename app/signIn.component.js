@@ -5,17 +5,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
+exports.__esModule = true;
 var core_1 = require("@angular/core");
-var router_1 = require("@angular/router");
-var hashService_service_1 = require("./hashService.service");
 var http_1 = require("@angular/http");
 var http_2 = require("@angular/http");
 require("rxjs/add/operator/toPromise");
-var activeUser_service_1 = require("./activeUser.service");
-var SignInComponent = (function () {
+var SignInComponent = /** @class */ (function () {
     function SignInComponent(hash, http, router, activeUserService) {
         this.hash = hash;
         this.http = http;
@@ -29,7 +24,9 @@ var SignInComponent = (function () {
         var router = this.router;
         var params = new http_2.URLSearchParams();
         params.append('type', 'signIn');
-        var options = new http_1.RequestOptions(params);
+        var options = new http_1.RequestOptions({
+            search: params
+        });
         this.http.post('http://localhost:8080/MyServlet', JSON.stringify({
             username: this.inputUsername,
             password: this.hash.hash(this.inputPassword)
@@ -38,21 +35,19 @@ var SignInComponent = (function () {
             .then(function (response) {
             _this.activeUserService.set(JSON.parse(response._body));
             router.navigate(['/UserPage']);
-        }).catch(function (reason) {
+        })["catch"](function (reason) {
             console.log(reason.toString());
         });
     };
     SignInComponent.prototype.onSignUp = function () {
         this.router.navigate(['/SignUpPage']);
     };
+    SignInComponent = __decorate([
+        core_1.Component({
+            selector: 'app-login-page',
+            templateUrl: './signIn.component.template.html'
+        })
+    ], SignInComponent);
     return SignInComponent;
 }());
-SignInComponent = __decorate([
-    core_1.Component({
-        selector: 'login-page',
-        templateUrl: './signIn.component.template.html',
-    }),
-    __metadata("design:paramtypes", [hashService_service_1.HashService, http_1.Http, router_1.Router, activeUser_service_1.ActiveUserService])
-], SignInComponent);
 exports.SignInComponent = SignInComponent;
-//# sourceMappingURL=signIn.component.js.map

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <base href="/">
+  <base href="/app">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
@@ -11,7 +11,8 @@
 
 <script src="https://unpkg.com/zone.js@0.7.4?main=browser"></script>
 <script src="https://unpkg.com/systemjs@0.19.39/dist/system.src.js"></script>
-<script src="systemjs.config.js"></script>
+<script src="https://unpkg.com/rxjs-system-bundle@5.1.1/Rx.system.min.js"></script>
+<script src="system.config.js"></script>
 <script>
   System.import('app').catch(function(err){ console.error(err); });
 </script>

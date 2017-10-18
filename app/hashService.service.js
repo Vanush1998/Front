@@ -1,6 +1,7 @@
 "use strict";
+exports.__esModule = true;
 var md5_1 = require("ts-md5/dist/md5");
-var HashService = (function () {
+var HashService = /** @class */ (function () {
     function HashService() {
     }
     HashService.prototype.hash = function (input) {
@@ -9,4 +10,3 @@ var HashService = (function () {
     return HashService;
 }());
 exports.HashService = HashService;
-//# sourceMappingURL=hashService.service.js.map
